@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 #/bin/sh
 
 # Completely remove mysql
@@ -7,9 +8,13 @@
 #sudo rm -rf /var/lib/mysql
 #sudo rm -rf /root/.my.cnf
 
-curl https://raw.githubusercontent.com/GetValkyrie/ansible-bootstrap/master/install-ansible.sh | /bin/sh
-ansible-galaxy install --ignore-errors http://github.com/getvalkyrie/ansible-role-mysql,,getvalkyrie.mysql
-ansible-galaxy install --ignore-errors http://github.com/getvalkyrie/ansible-role-drush,,getvalkyrie.drush
+sudo bash /vagrant/tests/install-ansible.sh
+
+sudo ansible-galaxy install -r /vagrant/tests/requirements.yml -f
+
+# ansible-galaxy install --ignore-errors https://github.com/geerlingguy/ansible-role-mysql,,geerlingguy.mysql --roles-path=/etc/ansible/roles/
+# ansible-galaxy install --ignore-errors https://github.com/ergonlogic/ansible-role-drush,,ergonlogic.drush --roles-path=/etc/ansible/roles/
+
 target=/etc/ansible/roles/ansible-role-aegir
 if [ ! -e $target ]; then
   mkdir -p /etc/ansible/roles

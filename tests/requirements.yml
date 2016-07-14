@@ -1,0 +1,7 @@
+
+# ansible-galaxy install -r requirements.yml -f -p roles
+---
+- name: geerlingguy.mysql
+  src: https://github.com/geerlingguy/ansible-role-mysql
+- name: ergonlogic.drush
+  src: https://github.com/ergonlogic/ansible-role-drush
