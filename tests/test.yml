@@ -9,6 +9,12 @@
     - geerlingguy.mysql
     - ergonlogic.drush
     - ansible-role-aegir
+    - { role: niccolox.aegir3platforms, platform_name: drupal8, makefiles_repo: "https://github.com/PraxisLabs/drupal8_makefiles.git", makefile_name: drupal8.make, release_feed: "https://github.com/PraxisLabs/drupal8_makefiles/tags.atom", tags: auto-deploy }
+    - { role: niccolox.aegir3platforms, platform_name: getopenoutreach, makefiles_repo: "https://github.com/PraxisLabs/getopenoutreach_makefiles.git", makefile_name: getopenoutreach.make, release_feed: "https://github.com/PraxisLabs/getopenoutreach_makefiles/releases.atom", tags: auto-deploy }
+    - { role: niccolox.aegir3platforms, platform_name: openatrium, makefiles_repo: "http://git.drupal.org/project/openatrium.git", makefile_name: build-openatrium.make, release_feed: "https://www.drupal.org/node/681432/release/feed", tags: auto-deploy }
+    - { role: niccolox.aegir3platforms, platform_name: civicrm, makefiles_repo: "https://github.com/PraxisLabs/civicrm_makefiles.git", makefile_name: build-civicrm.make, release_feed: "https://github.com/PraxisLabs/civicrm_makefiles/tags.atom", tags: auto-deploy }
+    - { role: niccolox.aegir3platforms, platform_name: drulenium, makefiles_repo: "https://github.com/ErgonLogicEnterprises/hosting_drulenium_drupal7_makefiles.git", makefile_name: hosting_drulenium_drupal7_makefiles.make, release_feed: "https://github.com/ErgonLogicEnterprises/hosting_drulenium_drupal7_makefiles/tags.atom", tags: auto-deploy }
+
   vars:
     # Use default log file size so Travis CI VM allows MySQL restart.
     - aegir_frontend_url: aegir-xenial-php7.local
@@ -29,6 +35,7 @@
       - htop
       - curl
       - wget
+      - rsstail # for aegir3platforms
     - aegir_install_additional_packages: true
     - aegir_additional_packages:
       - php-curl

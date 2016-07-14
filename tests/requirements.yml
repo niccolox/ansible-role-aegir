@@ -5,3 +5,5 @@
   src: https://github.com/geerlingguy/ansible-role-mysql
 - name: ergonlogic.drush
   src: https://github.com/ergonlogic/ansible-role-drush
+- name: niccolox.aegir3platforms
+  src: https://github.com/niccolox/ansible-role-aegir3platforms
