@@ -39,13 +39,14 @@ the Drush extensions (Provision, et. al.) that do the heavy lifting.
 
 to get into Aegir Hostmaster UI first time
 
+
+```
+vagrant ssh
 vagrant@aegir-xenial-php7:~$ sudo -i
 root@aegir-xenial-php7:~# su aegir
-aegir@aegir-xenial-php7:/root$ drush uli
-We could not find an applicable site for that command.                                                                                 [error]
 aegir@aegir-xenial-php7:/root$ drush @hm uli
 http://aegir-xenial-php7.local/user/reset/1/1468522482/6HYlDFgBK1DsQkfV_U9-85wyCWOnT42QPXI73OZlXYY/login
-
+```
 
 ## License
 
@@ -54,3 +55,5 @@ MIT / BSD
 ## Author Information
 
 This role was created in 2015 by [Christopher Gervais](http://ergonlogic.com/), lead maintainer of the [Aegir Hosting System](http://www.aegirproject.org).
+
+Forked July 14 2016 [Nicholas Roberts](http://www.devekko.com/)
